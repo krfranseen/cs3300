@@ -1,0 +1,41 @@
+<% provide(:page_title, @project.title) %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Short descr:</strong>
+  <%= @project.short_descr %>
+</p>
+
+<p>
+  <strong>Long descr:</strong>
+  <%= @project.long_descr %>
+</p>
+
+<p>
+  <strong>Complexity:</strong>
+  <%= @project.complexity %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @project.date %>
+</p>
+
+<p>
+  <strong>Images:</strong>
+  <%= @project.images %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @project.slug %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

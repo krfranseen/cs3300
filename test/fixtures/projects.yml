@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  short_descr: MyText
+  long_descr: MyText
+  complexity: 1
+  date: 2021-04-20 13:28:14
+  images: MyString
+  slug: MyString
+
+two:
+  title: MyString
+  short_descr: MyText
+  long_descr: MyText
+  complexity: 1
+  date: 2021-04-20 13:28:14
+  images: MyString
+  slug: MyString
