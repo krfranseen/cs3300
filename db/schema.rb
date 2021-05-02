@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_132814) do
+ActiveRecord::Schema.define(version: 2021_05_02_152242) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 2021_04_20_132814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_projects_on_slug", unique: true
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.text "degrees"
+    t.text "introduction"
+    t.text "resume"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
