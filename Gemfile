@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'mini_racer'
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'friendly_id', '~> 5.4.0'
+gem 'devise'
 
 group :production do
     gem 'pg', '~> 0.21' # for Heroku deployment

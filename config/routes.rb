@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :students
   resources :students
   resources :projects
   root to: "projects#index"
