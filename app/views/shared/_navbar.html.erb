@@ -9,8 +9,11 @@
 
         <% if student_signed_in? %>
 
-         <li class="nav-item">
-           <%= link_to 'Sign out', destroy_student_session_path, method: :delete, class: 'nav-link' %>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><%= current_student.username %></a>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign out', destroy_student_session_path, method: :delete, class: 'nav-link' %>
          </li>
        <% else %>
        
