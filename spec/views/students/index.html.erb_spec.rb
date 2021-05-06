@@ -5,18 +5,20 @@ RSpec.describe "students/index", type: :view do
     assign(:students, [
       Student.create!(
         :username => "Username",
+        :email => "myemail@gmail.com",
         :password => "Password",
-        :degrees => "MyText",
-        :introduction => "MyText",
-        :resume => "MyText",
+        :degrees => "MyDegree",
+        :introduction => "MyIntro",
+        :resume => "MyResume",
         :image => "Image"
       ),
       Student.create!(
         :username => "Username",
+        :email => "email@gmail.com",
         :password => "Password",
-        :degrees => "MyText",
-        :introduction => "MyText",
-        :resume => "MyText",
+        :degrees => "MyDegree",
+        :introduction => "MyIntro",
+        :resume => "MyResume",
         :image => "Image"
       )
     ])
@@ -26,9 +28,9 @@ RSpec.describe "students/index", type: :view do
     render
     assert_select "tr>td", :text => "Username".to_s, :count => 2
     assert_select "tr>td", :text => "Password".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => "MyDegree".to_s, :count => 2
+    assert_select "tr>td", :text => "MyIntro".to_s, :count => 2
+    assert_select "tr>td", :text => "MyResume".to_s, :count => 2
     assert_select "tr>td", :text => "Image".to_s, :count => 2
   end
 end

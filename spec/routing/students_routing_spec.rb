@@ -20,7 +20,7 @@ RSpec.describe StudentsController, type: :routing do
 
 
     it "routes to #create" do
-      expect(:post => "/students").to route_to("students#create")
+      expect(:post => "/students").to route_to("devise/registrations#create")
     end
 
     it "routes to #update via PUT" do

@@ -4,6 +4,7 @@ RSpec.describe "students/edit", type: :view do
   before(:each) do
     @student = assign(:student, Student.create!(
       :username => "MyString",
+      :email => "MyEmail@gmail.com",
       :password => "MyString",
       :degrees => "MyText",
       :introduction => "MyText",
