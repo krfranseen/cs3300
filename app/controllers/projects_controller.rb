@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects or /projects.json
   def index
     @projects = Project.all
+    @student = Student.find_by_id(1)
   end
 
   # GET /projects/1 or /projects/1.json
