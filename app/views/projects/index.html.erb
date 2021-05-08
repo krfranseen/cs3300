@@ -2,48 +2,85 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1><%= @student.username %></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= @student.username %></h1>
+    </div>
+  </div>
 
-<%= @student.email%>
+  <div class="row">
+    <div class="col-6">
+      <%= image_tag(@student.icon, style:'width:75%') %>
+    </div>
+    
+    <div class="col-6">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Short descr</th>
-      <th>Long descr</th>
-      <th>Complexity</th>
-      <th>Date</th>
-      <th>Images</th>
-      <th>Slug</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="row">
+        <div class="col-12">
+          <%= @student.degrees %>
+        </div>
+      </div>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.short_descr %></td>
-        <td><%= project.long_descr %></td>
-        <td><%= project.complexity %></td>
-        <td><%= project.date %></td>
-        <td><%= project.images %></td>
-        <td><%= project.slug %></td>
-        <td><%= link_to 'Show', project %></td>
+      <div class="row">
+        <div class="col-12">
+          <%= @student.introduction %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <% if student_signed_in? %>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+  <div class="row">
+    <div class="col-12">
+      <%= @student.resume %>
+    </div>
+  </div>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="row">
+    <div class="col-12">
 
-<br>
+      <table>
+        <thead>
+            <tr>
+              <th>Title</th>
+              <th>Short descr</th>
+              <th>Long descr</th>
+              <th>Complexity</th>
+              <th>Date</th>
+              <th>Images</th>
+              <th>Slug</th>
+              <th colspan="3"></th>
+            </tr>
+        </thead>
 
-<% if student_signed_in? %>
-  <%= link_to 'New Project', new_project_path %>
-<% end %>
+        <tbody>
+          <% @projects.each do |project| %>
+            <tr>
+              <td><%= project.title %></td>
+              <td><%= project.short_descr %></td>
+              <td><%= project.long_descr %></td>
+              <td><%= project.complexity %></td>
+              <td><%= project.date %></td>
+              <td><%= project.images %></td>
+              <td><%= project.slug %></td>
+              <td><%= link_to 'Show', project %></td>
+              
+              <% if student_signed_in? %>
+                <td><%= link_to 'Edit', edit_project_path(project) %></td>
+                <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+
+      <% if student_signed_in? %>
+        <%= link_to 'New Project', new_project_path %>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>
