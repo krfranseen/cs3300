@@ -63,9 +63,16 @@
              <tr>
                <td><%= project.title %></td>
                <td><%= project.short_descr %></td>
-               <td><%= project.complexity %></td>
-                <td><%= project.date %></td>
-               <td><%= link_to 'Show', project %></td>
+
+
+               <td>
+                 <% (1..project.complexity).each do |i| %>
+                    <span class="fa fa-star checked"></span>
+                 <% end %> 
+               </td>
+
+                <td><%= project.date.strftime('%m/%e/%y') %></td>
+                <td><%= link_to 'Show', project %></td>
               
                <% if student_signed_in? %>
                  <td><%= link_to 'Edit', edit_project_path(project) %></td>
