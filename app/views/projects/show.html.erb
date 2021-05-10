@@ -2,43 +2,50 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="title"><%= @project.title %></h1>  
+    </div>
+  </div>
 
-<p>
-  <strong>Short descr:</strong>
-  <%= @project.short_descr %>
-</p>
+  <div class="row">
+    <div class="col-12">
+      <p><%= @project.short_descr %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Long descr:</strong>
-  <%= @project.long_descr %>
-</p>
+  <div class="row">
+    <div class="col-12">
+      <strong>Complexity:</strong>
+      <br>
+      <% (1..@project.complexity).each do |i| %>
+        <span class="fa fa-star checked"></span>
+      <% end %>
+    </div>
+  </div>
 
-<p>
-  <strong>Complexity:</strong>
-  <%= @project.complexity %>
-</p>
+  <div class="row">
+    <div class="col-12">
+      <strong>Date:</strong>
+      <br>
+      <p><%= @project.date.strftime('%m/%e/%y') %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @project.date %>
-</p>
+  <div class="row">
+    <div class="col-12">
+      <p><%= @project.long_descr %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Images:</strong>
-  <%= @project.images %>
-</p>
+  <div class="row">
+    <div class="col-12">
+      <% if student_signed_in? %>
+        <%= link_to 'Edit', edit_project_path(@project) %> |
+      <% end %>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @project.slug %>
-</p>
-
-<% if student_signed_in? %>
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-<% end %> 
-
-<%= link_to 'Back', projects_path %>
+      <%= link_to 'Back', projects_path %>
+    </div>
+  </div>
+</div>
