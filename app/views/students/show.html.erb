@@ -10,7 +10,7 @@
   <%= @student.password %>
 </p>
 
-<%= image_tag(@student.icon) %>
+<%= image_tag(@student.icon) if @student.icon.attached?%>
 
 <p>
   <strong>Degrees:</strong>
